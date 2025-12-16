@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LogTestController {
 
-//    private final Logger log = LoggerFactory.getLogger(LogTestController.class);//현재 내 클래스
+//    private final Logger log = LoggerFactory.getLogger(LogTestController.class);
 
     @RequestMapping("/log-test")
     public String logTest() {
@@ -18,15 +18,13 @@ public class LogTestController {
 
         System.out.println("name = " + name);
 
-//         trace 사용 안 하는데 연산을 해버려서 리소스 낭비됨.
-//        log.trace(" info log=" + name); + 사용 절대 x
-
-        log.trace("trace log={}", name);
-        log.debug("debug log={}", name);
+        log.trace(" trace log={}", name);
+        log.debug(" debug log={}", name);
         log.info(" info log={}", name);
         log.warn(" warn log={}", name);
-        log.error("error log={}", name);
+        log.error(" error log={}", name);
 
         return "ok";
     }
+
 }
